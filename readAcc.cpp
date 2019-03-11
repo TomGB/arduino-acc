@@ -26,8 +26,21 @@ void loop(){
   GyY=Wire.read()<<8|Wire.read();  // 0x45 (GYRO_YOUT_H) & 0x46 (GYRO_YOUT_L)
   GyZ=Wire.read()<<8|Wire.read();  // 0x47 (GYRO_ZOUT_H) & 0x48 (GYRO_ZOUT_L)
 
-  String serialOutput = String(AcX) + " " + String(AcY) + " " + String(AcZ) + " " + String(Tmp / 340.00 + 36.53);
-  Serial.print(serialOutput);
+  Serial.flush();
+  Serial.print(AcX);
+  Serial.print(" ");
+  Serial.print(AcY);
+  Serial.print(" ");
+  Serial.print(AcZ);
+  Serial.print(" ");
+  Serial.print(Tmp / 340.00 + 36.53);
+  Serial.print(" ");
+  Serial.print(GyX);
+  Serial.print(" ");
+  Serial.print(GyY);
+  Serial.print(" ");
+  Serial.print(GyZ);
+  Serial.print("*");
 
   delay(10);
 }
