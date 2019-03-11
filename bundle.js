@@ -91060,8 +91060,8 @@ let sketch = function(p) {
       const { AcX, AcY } = JSON.parse(data)
       console.log(AcX, AcY)
 
-      x += - (parseInt(AcX) / 100);
-      y += (parseInt(AcY) / 100);
+      x += - (parseInt(AcX) / 200);
+      y += (parseInt(AcY) / 200);
 
       if (x < 0) x = 1000
       if (x > 1000) x = 0
